@@ -5,10 +5,10 @@
 	<div th:replace="layout::navbar"></div>	
 	<form th:action="@{/form}" method="POST" th:object="${cliente}">
 		<input type="text" th:field="*{username}"/><br>
-		<small th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></small>
+		<small th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></small><br>
 				
 		<input type="password" th:field="*{password}"><br>
-		<small th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
+		<small th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small><br>
 		
 		<input type="submit" value="Guardar" />
 		
