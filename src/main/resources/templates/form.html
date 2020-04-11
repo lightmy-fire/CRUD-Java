@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head th:replace="layout::head"></head>
+<body>
+	<div th:replace="layout::navbar"></div>	
+	<form th:action="@{/form}" method="POST" th:object="${cliente}">
+		<input type="text" th:field="*{username}"/><br>
+		
+		<input type="password" th:field="*{password}"><br>
+		
+		<input type="submit" value="Guardar"/>
+		
+	</form>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"> 
+<head th:fragment="head">
+<meta charset="utf-8"/>
+<title th:text="${titulo}"></title>
+</head>
+<body>
+	<nav th:fragment="navbar">
+		<a th:href="@{/form}">Alta</a>
+	</nav>
+</body>
+</html>
