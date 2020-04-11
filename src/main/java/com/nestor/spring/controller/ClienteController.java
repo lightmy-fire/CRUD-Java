@@ -62,9 +62,9 @@ public class ClienteController {
 	public String guardar(@Valid Cliente cliente,BindingResult result, Model model, SessionStatus session){	
 		
 		if(result.hasErrors()) {
+			model.addAttribute("titulo","Formulario Cliente");
 			return "form";
 		}
-		
 		clienteService.guardar(cliente);
 		session.setComplete();
 		return "redirect:/";
@@ -74,6 +74,7 @@ public class ClienteController {
 	public String editar(@PathVariable(value="id")Long id, Model model) {
 		Cliente cliente=null;
 		if(id==0 || id==null) {
+			model.addAttribute("titulo","Formulario Cliente");
 			return "redirect:/form";
 		}
 		
