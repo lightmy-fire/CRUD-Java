@@ -8,10 +8,10 @@
 		
 		<form th:action="@{/form}" method="POST" th:object="${cliente}">
 		
-			<input class="form-control" type="text" th:field="*{username}"/><br>
+			<input class="form-control" type="text" th:field="*{username}"/>
 			<small th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></small><br>
 					
-			<input class="form-control" type="password" th:field="*{password}"><br>
+			<input class="form-control" type="password" th:field="*{password}">
 			<small th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small><br>
 			
 			<input class="btn btn-primary" type="submit" value="Guardar" />
