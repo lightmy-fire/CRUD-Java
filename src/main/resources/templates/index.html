@@ -3,21 +3,25 @@
 <head th:replace="layout::head"></head>
 <body>
 	<div th:replace="layout::navbar"></div>
-	
-	<thead>
-		<tr>
-			<th>ID</th>
-			<th>Usuario</th>
-			<th>Eliminar</th>
-			<th>Editar</th>
-		</tr>
-	</thead>
-		<tr th:each="cliente:${clientes}">
-			<td><a th:href="@{/ver/}+${cliente.id}" th:text="${cliente.id}"></a></td>
-			<td th:text="${cliente.username}"></td>
-			<td><a th:href="@{/delete/}+${cliente.id}">X</a></td>
-			<td><a th:href="@{/form/}+${cliente.id}">Editar</a></td>
-		</tr>
-	</table>
+	<div class="container">
+		<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Usuario</th>
+				<th>Eliminar</th>
+				<th>Editar</th>
+			</tr>
+		</thead>
+			<tr th:each="cliente:${clientes}">
+				<td><a th:href="@{/ver/}+${cliente.id}" th:text="${cliente.id}"></a></td>
+				<td th:text="${cliente.username}"></td>
+				<td><a class="text-danger" style="text-decoration:none;" th:href="@{/delete/}+${cliente.id}">X</a></td>
+				<td><a class="btn btn-primary" th:href="@{/form/}+${cliente.id}">Editar</a></td>
+			</tr>
+		</table>
+	</div>
+
+<div th:replace="layout::scripts"></div>
 </body>
 </html>
