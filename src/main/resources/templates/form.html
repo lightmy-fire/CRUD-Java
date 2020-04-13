@@ -3,16 +3,17 @@
 <head th:replace="layout::head"></head>
 <body>
 	<div th:replace="layout::navbar"></div>	
+    <div th:replace="layout::alerts"></div>	
 	<div class="container">
 		<h1 class="text-center pt-3" th:text=${titulo}></h1>
 		
 		<form th:action="@{/form}" method="POST" th:object="${cliente}">
 		
-			<input class="form-control" type="text" th:field="*{username}"/>
-			<small th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></small><br>
+			<input class="form-control" type="text" th:field="*{username}" placeholder="Usuario" autofocus/>
+			<small th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="form-text text-danger"></small><br>
 					
-			<input class="form-control" type="password" th:field="*{password}">
-			<small th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small><br>
+			<input class="form-control" type="password" th:field="*{password}" placeholder="Contraseña">
+			<small th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="form-text text-danger"></small><br>
 			
 			<input class="btn btn-primary" type="submit" value="Guardar" />
 			

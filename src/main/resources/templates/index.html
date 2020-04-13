@@ -3,6 +3,7 @@
 <head th:replace="layout::head"></head>
 <body>
 	<div th:replace="layout::navbar"></div>
+	<div th:replace="layout::alerts"></div>
 	<div class="container">
 		<table class="table table-striped">
 		<thead>
@@ -16,7 +17,7 @@
 			<tr th:each="cliente:${clientes}">
 				<td><a th:href="@{/ver/}+${cliente.id}" th:text="${cliente.id}"></a></td>
 				<td th:text="${cliente.username}"></td>
-				<td><a class="text-danger" style="text-decoration:none;" th:href="@{/delete/}+${cliente.id}">X</a></td>
+				<td><a class="text-danger" style="text-decoration:none;" th:href="@{/delete/}+${cliente.id}" onclick="alert('¿Seguro que quiere eliminar cliente?')">X</a></td>
 				<td><a class="btn btn-primary" th:href="@{/form/}+${cliente.id}">Editar</a></td>
 			</tr>
 		</table>
